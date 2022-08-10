@@ -1,0 +1,46 @@
+fragment GetTenantLeaseTenantTab on UnitTenantLeaseNode {
+  tenant {
+    id
+    fullName
+    phone
+    email
+    occupation
+    birthday
+    ssn
+    drivingLicense
+    passport
+    emergencyContact
+    emergencyContactPhone
+    address
+  }
+}
+
+fragment GetTenantLeaseUnitTab on UnitTenantLeaseNode {
+  start
+  end
+  rentDay
+  rentAmount
+  securityDeposit
+  leasePeriod
+  paymentMethods
+  unit {
+    id
+    pk
+    price
+    building {
+      pk
+      id
+      displayName
+    }
+    unitNumber
+    floor
+    rentType
+  }
+}
+fragment GetTenantLeaseDocumentsTab on UnitTenantLeaseNode {
+  __typename
+}
+
+fragment GetTenantLeaseActivityTab on UnitTenantLeaseNode {
+  __typename
+}

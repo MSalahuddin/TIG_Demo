@@ -1,0 +1,9 @@
+mutation UploadLeaseDocument($id: ID!, $document: Upload!) {
+  uploadLeaseDocument(input: {id: $id, file: $document}) {
+    document {
+      id
+      name
+      url
+    }
+  }
+}

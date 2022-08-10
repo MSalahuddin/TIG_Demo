@@ -1,0 +1,26 @@
+query ListDocuments($after: String, $first: Int, $folder: ID, $search: String, $userId: Int) {
+  documents(user: $userId, after: $after, first: $first, folder: $folder, search: $search) {
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    edges {
+      node {
+        id
+        name
+        itemType
+        folder {
+          id
+        }
+        ... on DocumentFileNode {
+          url
+        }
+        ... on DocumentFolderNode {
+          items {
+            edgeCount
+          }
+        }
+      }
+    }
+  }
+}

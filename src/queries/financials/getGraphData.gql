@@ -1,0 +1,18 @@
+query financialsGraphData($isPaid: Boolean){
+  financialsGraphData(isPaid: $isPaid){
+    totals{
+      gross,
+      incoming,
+      outgoing
+    }
+    months{
+    	edges{
+        node{
+          incoming
+          outgoing
+          month
+        }
+      }
+    }
+  }
+}

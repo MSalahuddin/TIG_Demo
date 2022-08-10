@@ -1,0 +1,19 @@
+query GetAllViolationsOfBuilding($after: String, $first: Int) {
+  allViolations(after: $after, first: $first) {
+    edges {
+      node {
+              id
+              idInSupplier
+              description
+              price
+              type
+              severity
+              issueDate
+              building {
+                id
+                displayName
+              }
+      }
+    }
+  }
+}
